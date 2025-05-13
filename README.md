@@ -1,7 +1,7 @@
-*Jorge Alberto Palacios Burguete*
+**Jorge Alberto Palacios Burguete**
 
 Nombre del e-commerce: TrueAim
 
-[pagina e-comerse](./docs/index.html)
+[pagina e-commerce](./docs/index.html)
 
 [Prompts](/prompt.md)
