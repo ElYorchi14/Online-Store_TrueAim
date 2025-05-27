@@ -27,10 +27,27 @@ async function cargarCarrito() {
       <h3 class="text-lg font-semibold">${producto.nombre}</h3>
       <p>${producto.descripcion}</p>
       <p class="text-blue-600 font-bold">$${producto.precio}</p>
+      <button onclick="eliminarDelCarrito(${producto.id_producto})"class="mt-2 text-sm text-red-500 hover:underline">
+      Eliminar
+      </button>
     </div>
   `
     )
     .join("");
+
+  const total = productos.reduce((sum, p) => sum + p.precio, 0);
+  container.innerHTML += `
+      <div class="text-right font-bold text-xl mt-4">
+        Total: $${total.toFixed(2)}
+      </div>
+    `;
 }
+
+window.eliminarDelCarrito = function (id) {
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  carrito = carrito.filter((pid) => pid !== id);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  location.reload(); // recarga la página para actualizar la vista
+};
 
 document.addEventListener("DOMContentLoaded", cargarCarrito);
