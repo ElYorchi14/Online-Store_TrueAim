@@ -33,13 +33,21 @@ async function cargarProducto() {
           <p class="text-gray-600 mb-4">${producto.descripcion}</p>
           <p class="text-blue-600 font-bold text-xl mb-4">$${producto.precio}</p>
           <p class="text-sm text-gray-500 mb-2">Stock disponible: ${producto.stock}</p>
-          <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-            Agregar al carrito
+          <button onclick="agregarAlCarrito(${producto.id_producto})" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+          Agregar al carrito
           </button>
+
         </div>
       </div>
     </div>
   `;
+
+  function agregarAlCarrito(id) {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    carrito.push(id);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    alert("Producto agregado al carrito");
+  }
 }
 
 document.addEventListener("DOMContentLoaded", cargarProducto);
