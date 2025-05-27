@@ -1,4 +1,4 @@
-import { supabase } from "../supabase/supabase-client.js";
+import { supabase } from "/Online-Store_TrueAim/supabase/supabase-client.js";
 
 // Obtener el ID desde la URL
 const params = new URLSearchParams(window.location.search);

@@ -1,4 +1,4 @@
-import { supabase } from "../supabase/supabase-client.js";
+import { supabase } from "/Online-Store_TrueAim/supabase/supabase-client.js";
 
 async function cargarCarrito() {
   const container = document.querySelector("#carrito-container");

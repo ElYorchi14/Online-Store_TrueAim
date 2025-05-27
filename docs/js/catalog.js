@@ -1,4 +1,4 @@
-import { supabase } from "../supabase/supabase-client.js";
+import { supabase } from "/Online-Store_TrueAim/supabase/supabase-client.js";
 
 // Función para crear una tarjeta HTML de producto
 function crearTarjetaProducto(producto) {
@@ -8,7 +8,7 @@ function crearTarjetaProducto(producto) {
       <h3 class="text-lg font-semibold">${producto.nombre}</h3>
       <p class="text-gray-600">${producto.descripcion}</p>
       <p class="font-bold text-blue-600 mt-2">$${producto.precio}</p>
-      <a href="product.html?id=${producto.id_producto}" class="text-sm text-blue-500 hover:underline mt-2 inline-block">
+      <a href="/Online-Store_TrueAim/product.html?id=${producto.id_producto}" class="text-sm text-blue-500 hover:underline mt-2 inline-block">
         Ver producto
       </a>
     </div>
