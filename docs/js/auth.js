@@ -35,7 +35,7 @@ if (loginForm) {
       alert("Error: " + error.message);
     } else {
       alert("Login exitoso");
-      window.location.href = "/index.html";
+      window.location.href = "../docs/index.html";
     }
   });
 }
