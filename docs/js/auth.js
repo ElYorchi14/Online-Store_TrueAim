@@ -35,7 +35,7 @@ if (loginForm) {
       alert("Error: " + error.message);
     } else {
       alert("Login exitoso");
-      window.location.href = "../docs/index.html";
+      window.location.href = "/Online-Store_TrueAim/docs/index.html";
     }
   });
 }
