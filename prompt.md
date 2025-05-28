@@ -1,5 +1,3 @@
-[Chat con ChatGPT](https://chatgpt.com/share/6836a97e-e0b8-800f-897d-a065fc20e9c1)
-
 ¡Perfecto! Ya con esta información, vamos a construir un **prompt eficiente y modular** que puedas usar directamente en tu proyecto y documentar en `prompt.md`.
 
 ### ✅ Vamos a trabajar **por módulos**, así que este será el prompt inicial para el **Módulo 1: Estructura base y autenticación**.
