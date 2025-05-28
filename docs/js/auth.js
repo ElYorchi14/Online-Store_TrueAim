@@ -15,7 +15,7 @@ if (registerForm) {
     } else {
       alert("Registro exitoso. Verifica tu correo.");
       // ✅ Redirigir al login
-      window.location.href = "/Online-Store_TrueAim/auth/login.html";
+      window.location.href = "/Online-Store_TrueAim/login.html";
     }
   });
 }
