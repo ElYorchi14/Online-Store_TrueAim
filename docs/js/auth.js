@@ -1,4 +1,4 @@
-import { supabase } from "../supabase/supabase-client.js";
+import { supabase } from "/Online-Store_TrueAim/supabase/supabase-client.js";
 
 // Registro
 const registerForm = document.querySelector("#register-form");
@@ -35,7 +35,7 @@ if (loginForm) {
       alert("Error: " + error.message);
     } else {
       alert("Login exitoso");
-      window.location.href = "/Online-Store_TrueAim/docs/index.html";
+      window.location.href = "/Online-Store_TrueAim/index.html";
     }
   });
 }
