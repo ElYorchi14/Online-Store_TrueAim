@@ -27,21 +27,29 @@ async function cargarCarrito() {
         <h3 class="text-lg font-semibold">${producto.nombre}</h3>
         <p>${producto.descripcion}</p>
         <p class="text-blue-600 font-bold">$${producto.precio}</p>
-        <button onclick="eliminarDelCarrito(${producto.id_producto})" class="mt-2 text-sm text-red-500 hover:underline">
-          Eliminar
-        </button>
+        <button onclick="eliminarDelCarrito(${producto.id_producto})" class="mt-2 text-sm text-red-500 hover:underline">Eliminar</button>
       </div>
     `
     )
     .join("");
 
   const total = productos.reduce((sum, p) => sum + p.precio, 0);
-
   container.innerHTML += `
-    <div class="text-right font-bold text-xl mt-4">
-      Total: $${total.toFixed(2)}
+    <div class="text-right font-bold text-xl mt-4">Total: $${total.toFixed(
+      2
+    )}</div>
+    <div class="text-right mt-4">
+      <button id="btn-comprar" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">Simular compra</button>
     </div>
   `;
+
+  document.querySelector("#btn-comprar").addEventListener("click", () => {
+    alert(
+      "Gracias por tu compra. Te hemos enviado un correo con la confirmación."
+    );
+    localStorage.removeItem("carrito");
+    location.href = "/Online-Store_TrueAim/index.html";
+  });
 }
 
 window.eliminarDelCarrito = function (id) {
@@ -54,9 +62,9 @@ window.eliminarDelCarrito = function (id) {
 document.addEventListener("DOMContentLoaded", () => {
   cargarCarrito();
 
-  const finalizarBtn = document.getElementById("finalizar-compra");
-  if (finalizarBtn) {
-    finalizarBtn.addEventListener("click", () => {
+  const btnSimularCompra = document.querySelector("#simular-compra");
+  if (btnSimularCompra) {
+    btnSimularCompra.addEventListener("click", async () => {
       const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
       if (carrito.length === 0) {
@@ -64,9 +72,25 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      alert("¡Gracias por tu compra!");
+      const emailUsuario = (await supabase.auth.getUser()).data.user?.email;
+
+      if (!emailUsuario) {
+        alert("Debes iniciar sesión para completar la compra.");
+        window.location.href = "/Online-Store_TrueAim/auth/login.html";
+        return;
+      }
+
+      alert(
+        `Compra simulada con éxito. Se ha enviado una confirmación a ${emailUsuario}.`
+      );
+
+      // Limpiar carrito
       localStorage.removeItem("carrito");
-      window.location.href = "/Online-Store_TrueAim/index.html";
+
+      // Redirigir al catálogo tras unos segundos
+      setTimeout(() => {
+        window.location.href = "/Online-Store_TrueAim/index.html";
+      }, 2000);
     });
   }
 });

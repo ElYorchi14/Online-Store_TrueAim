@@ -9,26 +9,30 @@
   <body class="bg-gray-100 font-sans">
     <main class="container mx-auto px-4 py-8">
       <h2 class="text-2xl font-semibold mb-6">Carrito de Compras</h2>
-
-      <div id="carrito-container" class="grid gap-4 mb-8"></div>
-
-      <!-- Botones fijos -->
-      <div class="flex justify-between">
+      <div id="carrito-container" class="grid gap-4"></div>
+      <div class="flex flex-col sm:flex-row justify-between mt-6 gap-4">
         <a
           href="/Online-Store_TrueAim/index.html"
-          class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition"
+          class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition text-center"
         >
           Volver al catálogo
         </a>
-
         <button
-          id="finalizar-compra"
-          class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+          id="simular-compra"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
         >
-          Finalizar compra
+          Simular compra
         </button>
       </div>
     </main>
+
+    <footer class="container mx-auto px-4 py-6">
+      <a
+        href="/Online-Store_TrueAim/index.html"
+        class="inline-block bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition"
+        >← Volver al catálogo</a
+      >
+    </footer>
 
     <script type="module" src="/Online-Store_TrueAim/js/cart.js"></script>
   </body>
