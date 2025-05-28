@@ -2,6 +2,6 @@
 
 Nombre del e-commerce: TrueAim
 
-[pagina e-commerce](https://elyorchi14.github.io/Online-Store_TrueAim/)
+[pagina e-commerce](https://elyorchi14.github.io/Online-Store_TrueAim/register.html)
 
 [Prompts](/prompt.md)
