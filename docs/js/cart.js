@@ -23,15 +23,15 @@ async function cargarCarrito() {
   container.innerHTML = productos
     .map(
       (producto) => `
-    <div class="bg-white p-4 rounded shadow">
-      <h3 class="text-lg font-semibold">${producto.nombre}</h3>
-      <p>${producto.descripcion}</p>
-      <p class="text-blue-600 font-bold">$${producto.precio}</p>
-      <button onclick="eliminarDelCarrito(${producto.id_producto})" class="mt-2 text-sm text-red-500 hover:underline">
-        Eliminar
-      </button>
-    </div>
-  `
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="text-lg font-semibold">${producto.nombre}</h3>
+        <p>${producto.descripcion}</p>
+        <p class="text-blue-600 font-bold">$${producto.precio}</p>
+        <button onclick="eliminarDelCarrito(${producto.id_producto})" class="mt-2 text-sm text-red-500 hover:underline">
+          Eliminar
+        </button>
+      </div>
+    `
     )
     .join("");
 
